@@ -17,7 +17,7 @@ const productSchema = new mongoose.Schema(
     slug: { type: String, required: [true, 'Product slug is required'], unique: true, lowercase: true, trim: true },
     shortDescription: { type: String, default: '' },
     description: { type: String, required: [true, 'Product description is required'] },
-    brand: { type: String, default: 'Herbal Essence', trim: true },
+    brand: { type: String, default: 'The Cake Era', trim: true },
     category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category', required: [true, 'Category is required'], index: true },
     subCategory: { type: mongoose.Schema.Types.ObjectId, ref: 'Category', default: null, index: true },
     sku: { type: String, required: [true, 'SKU is required'], unique: true, uppercase: true, trim: true },
@@ -39,12 +39,12 @@ const productSchema = new mongoose.Schema(
     thumbnail: { type: String, default: '' },
     images: [productImageSchema],
 
-    // Herbal Information
+    // Bakery / Nutritional Information
     ingredients: [{ type: String }],
     benefits: [{ type: String }],
     howToUse: { type: String, default: '' },
     nutritionalInformation: { type: String, default: '' },
-    disclaimer: { type: String, default: 'Consult a healthcare practitioner before use if pregnant or taking medication.' },
+    disclaimer: { type: String, default: 'Freshly baked on order. Best consumed within 48 hours. Keep refrigerated below 5°C.' },
     allergenInformation: { type: String, default: '' },
 
     // Compliance & Origin Certifications

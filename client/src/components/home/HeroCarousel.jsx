@@ -5,49 +5,49 @@ import bannerService from '../../services/bannerService';
 
 const DEFAULT_SLIDES = [
   {
-    id: 'nature-chosen',
-    image: '/images/hero-slide-1.jpg',
-    eyebrow: 'Ancient Wisdom • Modern Wellness',
-    title: 'Nature, thoughtfully chosen.',
-    subtitle: 'Daily rituals for balance, calm and natural care.',
-    ctaText: 'Explore the collection',
+    id: 'celebration-cakes',
+    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1600',
+    eyebrow: 'A New Era Of Celebration • Freshly Baked',
+    title: 'Artisanal Cakes, Crafted for Your Special Moments.',
+    subtitle: 'Rich belgian chocolate, red velvet, and exotic fruit cakes baked fresh on order.',
+    ctaText: 'Explore Celebration Cakes',
     ctaLink: '/shop',
     badges: [
-      { icon: Leaf, label: 'Pure & Natural' },
-      { icon: Flower2, label: 'Plant-Based Formulas' },
-      { icon: Sparkles, label: 'Ayurvedic Inspired' },
+      { icon: Sparkles, label: 'Freshly Baked Daily' },
+      { icon: Sparkles, label: '100% Eggless Options' },
+      { icon: Sparkles, label: 'Pure Belgian Cocoa' },
     ],
-    accentTag: 'Herbal Wellness for a Better You 🍃',
+    accentTag: '100% Freshly Baked Everyday 🎂',
   },
   {
-    id: 'ayurvedic-wellness',
-    image: '/images/hero-slide-2.jpg',
-    eyebrow: 'Himalayan Adaptogens & Botanicals',
-    title: 'Ayurvedic Wellness for Everyday Health.',
-    subtitle: 'Thoughtfully crafted herbal supplements, roots & pure elixirs.',
-    ctaText: 'Shop Ayurvedic Range',
-    ctaLink: '/category/ayurvedic-supplements',
+    id: 'designer-cakes',
+    image: 'https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=1600',
+    eyebrow: 'Custom Celebrations • Handcrafted Perfection',
+    title: 'Designer Cakes That Make Every Birthday Magical.',
+    subtitle: 'Tiered & thematic cakes customized with love, fresh berries, and silky creams.',
+    ctaText: 'Order Designer Cakes',
+    ctaLink: '/shop',
     badges: [
-      { icon: Leaf, label: '100% Plant Based' },
-      { icon: Sparkles, label: 'Quality Tested' },
-      { icon: Flower2, label: 'Small Batch Made' },
+      { icon: Sparkles, label: 'Custom Designs' },
+      { icon: Sparkles, label: 'Premium Butter' },
+      { icon: Sparkles, label: 'Delivered On-Time' },
     ],
-    accentTag: 'Traditional Wisdom, Modern Purity ✨',
+    accentTag: 'Custom Creations Available ✨',
   },
   {
-    id: 'organic-teas',
-    image: '/images/hero-slide-3.jpg',
-    eyebrow: 'Organic Teas & Daily Infusions',
-    title: 'Golden Elixirs & Soothing Teas.',
-    subtitle: 'Chamomile, holy basil and calming herbal blends for restful days.',
-    ctaText: 'Explore Herbal Teas',
-    ctaLink: '/category/herbal-teas',
+    id: 'bakery-pastries',
+    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1600',
+    eyebrow: 'Gourmet Bakery • Fresh From The Oven',
+    title: 'Delicate Pastries, Cookies & Oven-Fresh Bakes.',
+    subtitle: 'Melt-in-mouth cookies, flaky puff pastries, and golden baked artisan breads.',
+    ctaText: 'Explore Bakery Treats',
+    ctaLink: '/shop',
     badges: [
-      { icon: Leaf, label: 'Pure Whole Herbs' },
-      { icon: Flower2, label: 'Chamomile & Tulsi' },
-      { icon: Sparkles, label: 'Caffeine Free' },
+      { icon: Sparkles, label: 'Oven Fresh' },
+      { icon: Sparkles, label: 'Artisanal Recipes' },
+      { icon: Sparkles, label: 'No Preservatives' },
     ],
-    accentTag: 'Sip Calm, Live Well ☕',
+    accentTag: 'Oven Fresh & Pure Butter 🥐',
   },
 ];
 
@@ -70,24 +70,24 @@ const HeroCarousel = () => {
             image: b.imageUrl,
             eyebrow:
               DEFAULT_SLIDES[idx % DEFAULT_SLIDES.length]?.eyebrow ||
-              'Ancient Wisdom • Modern Wellness',
+              'A New Era Of Celebration • Freshly Baked',
             title: b.title,
             subtitle:
-              b.subtitle || 'Daily rituals for balance, calm and natural care.',
-            ctaText: b.linkUrl?.includes('tea')
-              ? 'Explore Herbal Teas'
-              : b.linkUrl?.includes('supplements')
-              ? 'Shop Ayurvedic Range'
+              b.subtitle || 'Fresh handcrafted celebration cakes and bakery delights.',
+            ctaText: b.linkUrl?.includes('pastry')
+              ? 'Explore Pastries'
+              : b.linkUrl?.includes('cake')
+              ? 'Shop Celebration Cakes'
               : 'Explore the collection',
             ctaLink: b.linkUrl || '/shop',
             badges: DEFAULT_SLIDES[idx % DEFAULT_SLIDES.length]?.badges || [
-              { icon: Leaf, label: 'Pure & Natural' },
-              { icon: Flower2, label: 'Plant-Based Formulas' },
-              { icon: Sparkles, label: 'Ayurvedic Inspired' },
+              { icon: Sparkles, label: 'Freshly Baked' },
+              { icon: Sparkles, label: 'Eggless Options' },
+              { icon: Sparkles, label: 'Pure Ingredients' },
             ],
             accentTag:
               DEFAULT_SLIDES[idx % DEFAULT_SLIDES.length]?.accentTag ||
-              'Herbal Wellness for a Better You 🍃',
+              'A New Era Of Celebration 🎂',
           }));
           setSlides(mapped);
         }

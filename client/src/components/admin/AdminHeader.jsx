@@ -41,9 +41,8 @@ const AdminHeader = ({ setMobileOpen }) => {
           <Menu size={22} />
         </button>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <Leaf size={16} color="#52b788" />
           <span style={{ fontSize: '0.92rem', color: '#153222', fontWeight: 700, letterSpacing: '0.2px' }}>
-            AyuVeda Operations & Management
+            The Cake Era Bakery Management
           </span>
         </div>
       </div>

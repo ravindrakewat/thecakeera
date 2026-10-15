@@ -130,7 +130,7 @@ const Shop = () => {
             marginBottom: '0.4rem',
           }}
         >
-          AyuVeda Pure Storefront
+          The Cake Era Gourmet Bakery
         </span>
         <h1
           style={{
@@ -141,10 +141,10 @@ const Shop = () => {
             marginBottom: '0.4rem',
           }}
         >
-          Herbal Wellness Collection
+          Artisanal Bakery &amp; Celebration Cakes
         </h1>
         <p style={{ color: '#55685c', fontSize: '0.98rem' }}>
-          Browse 100% authentic Himalayan organic teas, therapeutic essential oils &amp; Ayurvedic formulations.
+          Browse freshly baked celebration cakes, designer tiers, gourmet cupcakes, flaky croissants &amp; artisanal cookies.
         </p>
       </div>
 

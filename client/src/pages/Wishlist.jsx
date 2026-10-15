@@ -25,7 +25,7 @@ const Wishlist = () => {
         <Heart size={24} color="#e63946" fill="#e63946" />
         <div>
           <h1 style={{ fontSize: '1.8rem', color: '#1b4332' }}>My Wishlist ({wishlistItems.length} items)</h1>
-          <p style={{ color: '#5c6e63', fontSize: '0.88rem' }}>Your personal collection of saved herbal &amp; wellness formulations.</p>
+          <p style={{ color: '#5c6e63', fontSize: '0.88rem' }}>Your personal collection of saved cakes, pastries &amp; bakery favourites.</p>
         </div>
       </div>
 

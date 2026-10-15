@@ -6,9 +6,9 @@ const Navbar = () => {
   return (
     <header style={{ backgroundColor: '#1b4332', color: '#ffffff', padding: '1rem 0', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.4rem', fontWeight: '700', color: '#52b788' }}>
-          <Leaf size={28} color="#52b788" />
-          <span>Herbal Essence</span>
+        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', fontSize: '1.3rem', fontWeight: '700', color: '#d4af37', textDecoration: 'none' }}>
+          <img src="/logo.png" alt="The Cake Era" style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover', border: '1.5px solid #d4af37' }} />
+          <span>The Cake Era</span>
         </Link>
         <nav style={{ display: 'flex', gap: '2rem', fontSize: '1rem', fontWeight: '500' }}>
           <Link to="/" style={{ color: '#ffffff' }}>Home</Link>

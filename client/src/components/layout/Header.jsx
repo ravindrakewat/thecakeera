@@ -88,29 +88,22 @@ const Header = () => {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '0.65rem',
+              gap: '0.75rem',
               textDecoration: 'none',
             }}
           >
-            {/* Elegant Botanical Twin Leaf Mark */}
-            <svg
-              width="34"
-              height="34"
-              viewBox="0 0 36 36"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              style={{ flexShrink: 0 }}
-            >
-              <path
-                d="M18 32C18 32 15 23 7 20C7 10 14 5 21 6C20 12 18 19 18 32Z"
-                fill="#153222"
-              />
-              <path
-                d="M18 32C18 32 21 21 29 17C29 8 22 4 16 6C17 12 18 20 18 32Z"
-                fill="#2d6a4f"
-                opacity="0.9"
-              />
-            </svg>
+            <img
+              src="/logo.png"
+              alt="The Cake Era"
+              style={{
+                width: '46px',
+                height: '46px',
+                borderRadius: '50%',
+                objectFit: 'cover',
+                boxShadow: '0 2px 10px rgba(7, 40, 24, 0.25)',
+                border: '1.5px solid #d4af37',
+              }}
+            />
 
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span
@@ -127,15 +120,15 @@ const Header = () => {
               </span>
               <span
                 style={{
-                  fontSize: '0.58rem',
+                  fontSize: '0.62rem',
                   fontWeight: 600,
-                  letterSpacing: '2.4px',
-                  color: '#55685c',
+                  letterSpacing: '1.5px',
+                  color: '#997328',
                   textTransform: 'uppercase',
-                  marginTop: '1px',
+                  marginTop: '2px',
                 }}
               >
-                Pure Herbal Wellness
+                A New Era Of Celebration
               </span>
             </div>
           </Link>
@@ -160,7 +153,7 @@ const Header = () => {
           />
           <input
             type="text"
-            placeholder="Search herbal teas, ashwagandha, skin oils, immunity..."
+            placeholder="Search chocolate cakes, red velvet, pastries, cookies, breads..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             style={{
@@ -445,7 +438,7 @@ const Header = () => {
           />
           <input
             type="text"
-            placeholder="Search herbal teas, ashwagandha, skin oils..."
+            placeholder="Search cakes, pastries, cookies..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             style={{

@@ -81,26 +81,22 @@ const AdminSidebar = ({ mobileOpen, setMobileOpen }) => {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <div
+            <img
+              src="/logo.png"
+              alt="The Cake Era"
               style={{
                 width: '38px',
                 height: '38px',
-                borderRadius: '10px',
-                backgroundColor: 'rgba(82, 183, 136, 0.16)',
-                border: '1px solid rgba(82, 183, 136, 0.3)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#52b788',
+                borderRadius: '50%',
+                objectFit: 'cover',
+                border: '1.5px solid #d4af37',
                 flexShrink: 0,
               }}
-            >
-              <Leaf size={20} />
-            </div>
+            />
             <div>
               <span
                 style={{
-                  fontSize: '1.15rem',
+                  fontSize: '1.1rem',
                   fontWeight: 800,
                   color: '#ffffff',
                   fontFamily: 'var(--font-heading)',
@@ -109,12 +105,12 @@ const AdminSidebar = ({ mobileOpen, setMobileOpen }) => {
                   lineHeight: 1.15,
                 }}
               >
-                AyuVeda
+                The Cake Era
               </span>
               <span
                 style={{
                   fontSize: '0.7rem',
-                  color: '#74c69d',
+                  color: '#d4af37',
                   fontWeight: 700,
                   letterSpacing: '0.8px',
                   textTransform: 'uppercase',
@@ -122,7 +118,7 @@ const AdminSidebar = ({ mobileOpen, setMobileOpen }) => {
                   marginTop: '2px',
                 }}
               >
-                Admin Workspace
+                Admin Panel
               </span>
             </div>
           </div>

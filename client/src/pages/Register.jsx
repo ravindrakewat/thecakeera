@@ -142,18 +142,15 @@ const Register = () => {
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <div style={{
             display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-            width: '64px', height: '64px', borderRadius: '18px',
-            background: 'linear-gradient(135deg, #2d6a4f 0%, #1b4332 100%)',
-            boxShadow: '0 8px 24px rgba(27,67,50,0.25)',
             marginBottom: '1rem',
           }}>
-            <Leaf size={30} color="#ffffff" />
+            <img src="/logo.png" alt="The Cake Era" style={{ width: '72px', height: '72px', borderRadius: '50%', objectFit: 'cover', border: '2px solid #d4af37', boxShadow: '0 8px 24px rgba(7,40,24,0.25)' }} />
           </div>
           <h1 style={{ fontSize: '1.75rem', fontFamily: 'var(--font-heading)', color: 'var(--primary-deep)', marginBottom: '0.25rem' }}>
             Create Account
           </h1>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-            Join thousands of herbal wellness enthusiasts
+            Join The Cake Era family for special celebration delights
           </p>
         </div>
 

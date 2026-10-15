@@ -17,7 +17,7 @@ const Cart = () => {
     return (
       <div className="container" style={{ paddingBottom: '4rem' }}>
         <Breadcrumbs items={[{ label: 'Shopping Cart' }]} />
-        <EmptyState title="Your Cart is Empty" message="Looks like you haven't added any organic herbal products to your cart yet." actionText="Explore Storefront" actionLink="/shop" />
+        <EmptyState title="Your Cart is Empty" message="Looks like you haven't added any freshly baked cakes or treats to your cart yet." actionText="Explore Bakery" actionLink="/shop" />
       </div>
     );
   }

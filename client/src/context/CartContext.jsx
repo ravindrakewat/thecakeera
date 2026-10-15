@@ -9,7 +9,7 @@ export const CartProvider = ({ children }) => {
   
   const [guestCart, setGuestCart] = useState(() => {
     try {
-      const saved = localStorage.getItem('herbal_guest_cart');
+      const saved = localStorage.getItem('cakeera_guest_cart');
       const parsed = saved ? JSON.parse(saved) : [];
       return Array.isArray(parsed) ? parsed : [];
     } catch (e) {
@@ -25,7 +25,7 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     if (!isAuthenticated) {
       try {
-        localStorage.setItem('herbal_guest_cart', JSON.stringify(guestCart));
+        localStorage.setItem('cakeera_guest_cart', JSON.stringify(guestCart));
       } catch (e) {
         console.error('Failed to save guest cart to localStorage', e);
       }
@@ -59,7 +59,7 @@ export const CartProvider = ({ children }) => {
   const handleLoginCartMerge = useCallback(async () => {
     if (!isAuthenticated) return;
     try {
-      const savedGuest = localStorage.getItem('herbal_guest_cart');
+      const savedGuest = localStorage.getItem('cakeera_guest_cart');
       const guestItems = savedGuest ? JSON.parse(savedGuest) : [];
 
       if (guestItems && guestItems.length > 0) {
@@ -70,7 +70,7 @@ export const CartProvider = ({ children }) => {
 
         const res = await cartService.mergeCart(payload);
         setServerCart(res.data);
-        localStorage.removeItem('herbal_guest_cart');
+        localStorage.removeItem('cakeera_guest_cart');
         setGuestCart([]);
         showToast('Guest cart merged with your account!');
       } else {
@@ -193,7 +193,7 @@ export const CartProvider = ({ children }) => {
       }
     } else {
       setGuestCart([]);
-      localStorage.removeItem('herbal_guest_cart');
+      localStorage.removeItem('cakeera_guest_cart');
       showToast('Cart cleared');
     }
   };
@@ -205,7 +205,7 @@ export const CartProvider = ({ children }) => {
   const activeItems = isAuthenticated
     ? safeServerItems.map((i) => ({
         product: i.product?._id || i.product,
-        name: i.product?.name || 'Herbal Product',
+        name: i.product?.name || 'Bakery Product',
         slug: i.product?.slug || '',
         price: i.product?.sellingPrice || i.price || 0,
         mrp: i.product?.mrp || i.mrp || 0,

@@ -25,7 +25,7 @@ export const WishlistProvider = ({ children }) => {
 
   const [guestWishlist, setGuestWishlist] = useState(() => {
     try {
-      const saved = localStorage.getItem('herbal_guest_wishlist');
+      const saved = localStorage.getItem('cakeera_guest_wishlist');
       const parsed = saved ? JSON.parse(saved) : [];
       return Array.isArray(parsed) ? parsed : [];
     } catch (e) {
@@ -40,7 +40,7 @@ export const WishlistProvider = ({ children }) => {
   useEffect(() => {
     if (!isAuthenticated) {
       try {
-        localStorage.setItem('herbal_guest_wishlist', JSON.stringify(guestWishlist));
+        localStorage.setItem('cakeera_guest_wishlist', JSON.stringify(guestWishlist));
       } catch (e) {
         console.error('Failed to save guest wishlist to localStorage', e);
       }
@@ -64,14 +64,14 @@ export const WishlistProvider = ({ children }) => {
   const handleLoginWishlistMerge = useCallback(async () => {
     if (!isAuthenticated) return;
     try {
-      const savedGuest = localStorage.getItem('herbal_guest_wishlist');
+      const savedGuest = localStorage.getItem('cakeera_guest_wishlist');
       const guestItems = savedGuest ? JSON.parse(savedGuest) : [];
 
       if (guestItems && guestItems.length > 0) {
         const productIds = guestItems.map((item) => item?._id || item?.id || item).filter(Boolean);
         const res = await wishlistService.mergeWishlist(productIds);
         setServerWishlist(extractProducts(res));
-        localStorage.removeItem('herbal_guest_wishlist');
+        localStorage.removeItem('cakeera_guest_wishlist');
         setGuestWishlist([]);
       } else {
         await fetchServerWishlist();
@@ -168,7 +168,7 @@ export const WishlistProvider = ({ children }) => {
       }
     } else {
       setGuestWishlist([]);
-      localStorage.removeItem('herbal_guest_wishlist');
+      localStorage.removeItem('cakeera_guest_wishlist');
     }
   };
 

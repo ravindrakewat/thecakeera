@@ -54,12 +54,12 @@ const Home = () => {
             products={featuredProducts}
             loading={loading}
             title="Bestsellers"
-            subtitle="Our most loved herbal products"
+            subtitle="Freshly baked artisan cakes, treats & celebration favourites"
             viewAllLink="/shop"
           />
         </div>
 
-        {/* 3. TRUST STRIP (Matching Reference Design) */}
+        {/* 3. TRUST STRIP (Bakery Theme) */}
         <section
           style={{
             padding: '3rem 1rem 1rem 1rem',
@@ -75,7 +75,7 @@ const Home = () => {
               alignItems: 'center',
             }}
           >
-            {/* 1. Quality checked */}
+            {/* 1. Freshly Baked */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.1rem' }}>
               <div
                 style={{
@@ -103,10 +103,10 @@ const Home = () => {
                     fontFamily: 'var(--font-body)',
                   }}
                 >
-                  Quality checked
+                  Freshly Baked Everyday
                 </h4>
                 <p style={{ fontSize: '0.84rem', color: '#65776d', margin: 0 }}>
-                  Curated &amp; tested for purity
+                  Baked fresh on order with pure butter &amp; cocoa
                 </p>
               </div>
             </div>
@@ -142,12 +142,12 @@ const Home = () => {
                   Secure checkout
                 </h4>
                 <p style={{ fontSize: '0.84rem', color: '#65776d', margin: 0 }}>
-                  100% safe &amp; encrypted payments
+                  100% safe payments &amp; Cash on Delivery
                 </p>
               </div>
             </div>
 
-            {/* 3. Thoughtful packaging */}
+            {/* 3. Celebration packaging */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.1rem' }}>
               <div
                 style={{
@@ -175,10 +175,10 @@ const Home = () => {
                     fontFamily: 'var(--font-body)',
                   }}
                 >
-                  Thoughtful packaging
+                  Celebration Packaging
                 </h4>
                 <p style={{ fontSize: '0.84rem', color: '#65776d', margin: 0 }}>
-                  Carefully packed for a better tomorrow
+                  Insulated packaging, free knife &amp; candles
                 </p>
               </div>
             </div>
@@ -206,7 +206,7 @@ const Home = () => {
                     letterSpacing: '1px',
                   }}
                 >
-                  Botanical Range
+                  Fresh From Our Oven
                 </span>
                 <h3
                   style={{
@@ -216,7 +216,7 @@ const Home = () => {
                     marginTop: '0.2rem',
                   }}
                 >
-                  Explore Organic Collections
+                  Explore Bakery Collections
                 </h3>
               </div>
               <Link

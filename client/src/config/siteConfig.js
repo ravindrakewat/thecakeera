@@ -1,9 +1,9 @@
 export const siteConfig = {
-  brandName: 'AyuVeda Herbal',
-  tagline: '100% Pure, Organic & Authentic Ayurvedic Wellness',
-  description: 'Handpicked organic teas, pure essential oils, skin ubtans, and authentic Ayurvedic supplements.',
+  brandName: 'The Cake Era',
+  tagline: 'A New Era Of Celebration — Freshly Baked & Perfectly Made',
+  description: 'Premium handcrafted cakes, artisanal pastries, fresh cookies, and celebration treats baked fresh with love.',
   currency: '₹',
-  supportEmail: 'care@ayuveda.com',
+  supportEmail: 'contact@thecakeera.in',
   supportPhone: '+91 98765 43210',
-  address: 'Himalayan Herbal Estate, Sector 5, Bhopal, MP - 462001',
+  address: 'The Cake Era Gourmet Bakery, India',
 };

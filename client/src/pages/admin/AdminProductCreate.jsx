@@ -242,7 +242,7 @@ const AdminProductCreate = () => {
         <Link to="/admin/products" style={{ color: '#5c6e63', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.3rem', fontWeight: 600 }}>
           <ArrowLeft size={18} /> Back to Products
         </Link>
-        <h1 style={{ fontSize: '1.8rem', color: '#1b4332', margin: 0 }}>Add New Herbal Product</h1>
+        <h1 style={{ fontSize: '1.8rem', color: '#1b4332', margin: 0 }}>Add New Bakery Product / Cake</h1>
       </div>
 
       {errorMsg && (
@@ -443,23 +443,23 @@ const AdminProductCreate = () => {
           </div>
         </div>
 
-        {/* Section 4: Herbal Specification */}
+        {/* Section 4: Bakery Specification */}
         <div style={{ backgroundColor: '#fff', padding: '1.5rem', borderRadius: '14px', border: '1px solid #e2e8e4' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-            <Leaf size={20} color="#1b4332" />
-            <h3 style={{ margin: 0, color: '#1b4332', fontSize: '1.1rem' }}>4. Herbal Information & Accordion Details</h3>
+            <Sparkles size={20} color="#1b4332" />
+            <h3 style={{ margin: 0, color: '#1b4332', fontSize: '1.1rem' }}>4. Bakery Details &amp; Ingredients</h3>
           </div>
           <div style={{ marginBottom: '1rem' }}>
             <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#1b4332', marginBottom: '0.3rem' }}>Ingredients (comma separated)</label>
-            <input type="text" name="ingredients" value={form.ingredients} onChange={handleChange} placeholder="Amla, Haritaki, Bibhitaki" style={{ width: '100%', padding: '0.65rem', borderRadius: '8px', border: '1px solid #c8d6ce' }} />
+            <input type="text" name="ingredients" value={form.ingredients} onChange={handleChange} placeholder="Belgian Cocoa, Fresh Cream, Wheat Flour, Dairy Butter" style={{ width: '100%', padding: '0.65rem', borderRadius: '8px', border: '1px solid #c8d6ce' }} />
           </div>
           <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#1b4332', marginBottom: '0.3rem' }}>Key Benefits (comma separated)</label>
-            <input type="text" name="benefits" value={form.benefits} onChange={handleChange} placeholder="Supports Digestion, Detoxification" style={{ width: '100%', padding: '0.65rem', borderRadius: '8px', border: '1px solid #c8d6ce' }} />
+            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#1b4332', marginBottom: '0.3rem' }}>Key Highlights / Benefits (comma separated)</label>
+            <input type="text" name="benefits" value={form.benefits} onChange={handleChange} placeholder="100% Eggless Option, Baked Fresh Daily, Free Knife &amp; Candles" style={{ width: '100%', padding: '0.65rem', borderRadius: '8px', border: '1px solid #c8d6ce' }} />
           </div>
           <div>
-            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#1b4332', marginBottom: '0.3rem' }}>How to Use</label>
-            <input type="text" name="howToUse" value={form.howToUse} onChange={handleChange} placeholder="Take 1 tsp with warm water before bedtime." style={{ width: '100%', padding: '0.65rem', borderRadius: '8px', border: '1px solid #c8d6ce' }} />
+            <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: '#1b4332', marginBottom: '0.3rem' }}>Serving &amp; Storage Instructions</label>
+            <input type="text" name="howToUse" value={form.howToUse} onChange={handleChange} placeholder="Refrigerate at 2-5°C. Take out 15 mins before slicing." style={{ width: '100%', padding: '0.65rem', borderRadius: '8px', border: '1px solid #c8d6ce' }} />
           </div>
         </div>
 

@@ -77,7 +77,7 @@ const OrderHistory = () => {
         <Breadcrumbs items={[{ label: 'My Orders' }]} />
         <EmptyState
           title="No Orders Found"
-          message="You haven't placed any orders yet. Explore our fresh organic herbal catalog!"
+          message="You haven't placed any orders yet. Explore our freshly baked cakes & treats catalog!"
           actionText="Start Shopping"
           actionLink="/shop"
         />

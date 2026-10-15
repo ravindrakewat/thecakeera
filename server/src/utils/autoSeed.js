@@ -1,27 +1,24 @@
 const { User, Category, Product, Banner, Coupon } = require('../models');
 
 const seedIfEmpty = async () => {
-  // ── PRODUCTION SAFETY GUARD ──────────────────────────────────────────────
-  // Auto-seeding of demo data and admin credentials must never run in
-  // production. This function is a development/test convenience only.
   if (process.env.NODE_ENV === 'production') {
     console.warn('[AutoSeed] Skipped: auto-seeding is disabled in production.');
     return;
   }
-  // ─────────────────────────────────────────────────────────────────────────
+
   try {
     const categoryCount = await Category.countDocuments();
     if (categoryCount > 0) {
       return;
     }
 
-    console.log('[AutoSeed] Database is empty. Seeding initial data...');
+    console.log('[AutoSeed] Database is empty. Seeding initial The Cake Era bakery data...');
 
     await User.create({
-      firstName: 'Herbal',
+      firstName: 'Cake Era',
       lastName: 'Admin',
-      name: 'Herbal Admin',
-      email: 'admin@herbal.com',
+      name: 'The Cake Era Admin',
+      email: 'admin@thecakeera.in',
       phone: '9876543210',
       password: 'AdminPassword123',
       role: 'admin',
@@ -29,10 +26,10 @@ const seedIfEmpty = async () => {
     });
 
     await User.create({
-      firstName: 'Organic',
+      firstName: 'Celebration',
       lastName: 'Customer',
-      name: 'Organic Customer',
-      email: 'customer@herbal.com',
+      name: 'Celebration Customer',
+      email: 'customer@thecakeera.in',
       phone: '9876543211',
       password: 'CustomerPassword123',
       role: 'user',
@@ -41,167 +38,159 @@ const seedIfEmpty = async () => {
 
     const categories = await Category.insertMany([
       {
-        name: 'Herbal Teas',
-        slug: 'herbal-teas',
-        description: 'Organic handpicked loose herbal tea infusions for relaxation & immunity.',
-        image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=800',
+        name: 'Celebration Cakes',
+        slug: 'celebration-cakes',
+        description: 'Multi-layered artisanal cakes freshly crafted for birthdays, anniversaries & celebrations.',
+        image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800',
         isActive: true,
       },
       {
-        name: 'Ayurvedic Supplements',
-        slug: 'ayurvedic-supplements',
-        description: 'Traditional Ayurvedic churnas, capsules, and pure botanical extracts.',
-        image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&w=800',
+        name: 'Designer & Themed Cakes',
+        slug: 'designer-cakes',
+        description: 'Opulent double-tiered, customized floral, and edible gold luxury celebration cakes.',
+        image: 'https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=800',
         isActive: true,
       },
       {
-        name: 'Essential Oils',
-        slug: 'essential-oils',
-        description: '100% Pure steam-distilled aromatic plant & flower essential oils.',
-        image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=800',
+        name: 'Pastries & Cupcakes',
+        slug: 'pastries-cupcakes',
+        description: 'Velvety cheesecakes, fluffy cupcakes, and single-serve gourmet pastry slices.',
+        image: 'https://images.unsplash.com/photo-1587314168485-3236d6710814?q=80&w=800',
         isActive: true,
       },
       {
-        name: 'Organic Skincare',
-        slug: 'organic-skincare',
-        description: 'Chemical-free herbal facial serums, ubtans, and botanical moisturizers.',
-        image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=800',
+        name: 'Artisanal Cookies',
+        slug: 'cookies-biscuits',
+        description: 'Crunchy oven-fresh butter cookies, loaded choco-chip bites, and almond shortbreads.',
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=800',
+        isActive: true,
+      },
+      {
+        name: 'Fresh Breads & Croissants',
+        slug: 'fresh-breads',
+        description: 'Parisian-style flaky butter croissants, brioche loaves, and crusty sourdough baguettes.',
+        image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800',
+        isActive: true,
+      },
+      {
+        name: 'Dessert Jars & Brownies',
+        slug: 'dessert-jars-brownies',
+        description: 'Fudgy walnut brownies, red velvet dessert jars, and molten lava cake pots.',
+        image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=800',
         isActive: true,
       },
     ]);
 
     await Product.insertMany([
       {
-        name: 'Pure Himalayan Ashwagandha Extract',
-        sku: 'HERB-ASHWA-001',
-        slug: 'pure-himalayan-ashwagandha-extract',
-        shortDescription: 'Organic root powder for stress relief and energy.',
-        description: 'Premium organic Ashwagandha (Withania somnifera) root powder for stress relief and vitality.',
-        benefits: ['Reduces Stress & Anxiety', 'Enhances Stamina & Muscle Recovery', 'Supports Immune Health'],
-        ingredients: ['100% Organic Ashwagandha Root Extract (KSM-66 grade)'],
-        howToUse: 'Take 1 teaspoon (3g) daily with warm milk or honey water before sleep.',
-        mrp: 699,
-        sellingPrice: 499,
-        category: categories[1]._id,
-        stockQuantity: 50,
-        thumbnail: '/images/ashwagandha.jpg',
+        name: 'Belgian Dark Truffle Celebration Cake',
+        sku: 'CAKE-TRUFFLE-001',
+        slug: 'belgian-dark-truffle-celebration-cake',
+        shortDescription: '54% Belgian dark chocolate ganache layered with moist sponge.',
+        description: 'An indulgent, showstopper cake made with 54% authentic Belgian chocolate ganache, layered between moist dark cocoa sponge and decorated with handmade golden chocolate curls. 100% freshly baked on order.',
+        brand: 'The Cake Era',
+        benefits: [
+          '100% Eggless Option Available',
+          'Made With 54% Real Belgian Chocolate Couverture',
+          'Freshly Baked On Order (Zero Old Stock)',
+          'Complimentary Celebration Knife & Premium Candles'
+        ],
+        ingredients: ['Belgian Dark Chocolate Couverture (54%)', 'Fresh Dairy Cream', 'Unbleached Wheat Flour', 'Pure Cocoa Butter', 'Madagascar Vanilla'],
+        howToUse: 'Store refrigerated at 2°C–5°C. For supreme melt-in-mouth richness, take out 15 minutes before serving.',
+        mrp: 899,
+        sellingPrice: 699,
+        category: categories[0]._id,
+        stockQuantity: 40,
+        thumbnail: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800',
         images: [
-          { url: '/images/ashwagandha.jpg', alt: 'Pure Himalayan Ashwagandha Extract Jar - Studio View', sortOrder: 0, width: 800, height: 800 },
-          { url: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&w=800', alt: 'Raw Organic Ashwagandha Roots & Herbal Powder', sortOrder: 1, width: 800, height: 800 }
+          { url: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800', alt: 'Belgian Dark Truffle Celebration Cake', sortOrder: 0, width: 800, height: 800 },
+          { url: 'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?q=80&w=800', alt: 'Belgian Chocolate Cake Texture Slice', sortOrder: 1, width: 800, height: 800 }
         ],
         isFeatured: true,
         averageRating: 4.9,
-        reviewCount: 38,
+        reviewCount: 48,
       },
       {
-        name: 'Chamomile & Tulsi Sleep Tea',
-        sku: 'HERB-TEA-002',
-        slug: 'chamomile-tulsi-sleep-tea',
-        shortDescription: 'Soothing organic herbal tea blend for deep sleep.',
-        description: 'Soothing blend of Egyptian Chamomile flowers and Holy Basil (Tulsi) for deep, restful sleep.',
-        benefits: ['Promotes Peaceful Sleep', 'Calms Nervous System', 'Supports Digestion'],
-        ingredients: ['Organic Chamomile Flowers', 'Krishna Tulsi', 'Vana Tulsi', 'Lavender Buds'],
-        howToUse: 'Steep 1 tea bag or 2g in boiling water for 5 minutes.',
-        mrp: 450,
-        sellingPrice: 349,
+        name: 'Classic Red Velvet Cream Cheese Cake',
+        sku: 'CAKE-REDVEL-002',
+        slug: 'classic-red-velvet-cream-cheese-cake',
+        shortDescription: 'Scarlet sponge frosted with decadent cream cheese frosting.',
+        description: 'Velvety scarlet sponge layers frosted with rich Philadelphia-style cream cheese and finished with delicate red velvet sponge crumble. Perfectly balanced sweet and tangy flavor.',
+        brand: 'The Cake Era',
+        benefits: [
+          'Authentic Philadelphia Cream Cheese Frosting',
+          'Velvety Buttermilk & Hint of Dutch Cocoa',
+          'Ideal For Anniversaries, Birthdays & Valentine',
+          'Includes Free Candles & Cutting Knife'
+        ],
+        ingredients: ['Cultured Buttermilk', 'Philadelphia Cream Cheese', 'Pure Cow Butter', 'Refined Wheat Flour', 'Vanilla Extract'],
+        howToUse: 'Keep refrigerated. Consume within 48 hours for ideal freshness.',
+        mrp: 999,
+        sellingPrice: 749,
         category: categories[0]._id,
-        stockQuantity: 100,
-        thumbnail: '/images/chamomile-tea.jpg',
+        stockQuantity: 35,
+        thumbnail: 'https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?q=80&w=800',
         images: [
-          { url: '/images/chamomile-tea.jpg', alt: 'Chamomile & Tulsi Sleep Tea Eco-Pouch', sortOrder: 0, width: 800, height: 800 },
-          { url: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=800', alt: 'Freshly Brewed Chamomile Herbal Infusion', sortOrder: 1, width: 800, height: 800 }
+          { url: 'https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?q=80&w=800', alt: 'Classic Red Velvet Cream Cheese Cake', sortOrder: 0, width: 800, height: 800 }
         ],
         isFeatured: true,
-        averageRating: 4.8,
-        reviewCount: 24,
+        averageRating: 4.9,
+        reviewCount: 36,
       },
       {
-        name: 'Wild Lavender Therapeutic Essential Oil',
-        sku: 'HERB-OIL-003',
-        slug: 'wild-lavender-therapeutic-essential-oil',
-        shortDescription: '100% Pure steam-distilled Lavender essential oil.',
-        description: '100% Pure steam-distilled Lavandula angustifolia essential oil for aromatherapy and skin calming.',
-        benefits: ['Aromatherapy Relaxation', 'Soothes Minor Skin Irritations', 'Natural Room Fragrance'],
-        ingredients: ['100% Pure Steam-Distilled Lavender Essential Oil'],
-        howToUse: 'Add 3-5 drops to an oil diffuser or mix with a carrier oil for skin application.',
-        mrp: 799,
-        sellingPrice: 599,
-        category: categories[2]._id,
-        stockQuantity: 30,
-        thumbnail: '/images/lavender-oil.jpg',
+        name: 'Royal Golden Floral Tiered Cake',
+        sku: 'CAKE-TIERED-003',
+        slug: 'royal-golden-floral-tiered-cake',
+        shortDescription: 'Double-tier luxury centerpiece with hand-applied 24K edible gold dust.',
+        description: 'Make milestone celebrations memorable with this bespoke double-tiered celebration cake. Frosted in smooth ivory buttercream, adorned with 24K edible gold leaf details and handcrafted sugar floral motifs.',
+        brand: 'The Cake Era',
+        benefits: [
+          'Spectacular Double-Tier Visual Centerpiece',
+          'Choice of Flavour (Belgian Chocolate or Madagascar Vanilla)',
+          'Handcrafted Sugar Florals & Edible Gold Leaf',
+          'Reinforced Safe Delivery Packaging'
+        ],
+        ingredients: ['Pure Butter', 'Icing Sugar', 'Madagascar Vanilla Pods', 'Edible Gold Leaf', 'Sponge Flour'],
+        howToUse: 'Serve at room temperature. Internal dowel supports provide structure—remove during slicing.',
+        mrp: 1999,
+        sellingPrice: 1599,
+        category: categories[1]._id,
+        stockQuantity: 15,
+        thumbnail: 'https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=800',
         images: [
-          { url: '/images/lavender-oil.jpg', alt: 'Wild Lavender Therapeutic Essential Oil Bottle', sortOrder: 0, width: 800, height: 800 },
-          { url: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=800', alt: 'Steam-Distilled Pure Wild Lavender Botanicals', sortOrder: 1, width: 800, height: 800 }
+          { url: 'https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=800', alt: 'Royal Golden Floral Tiered Cake', sortOrder: 0, width: 800, height: 800 }
         ],
         isFeatured: true,
         averageRating: 5.0,
-        reviewCount: 15,
-      },
-      {
-        name: 'Kumkumadi Radiance Facial Glow Oil',
-        sku: 'HERB-SKIN-004',
-        slug: 'kumkumadi-radiance-facial-glow-oil',
-        shortDescription: 'Ayurvedic saffron formulation for glowing skin.',
-        description: 'Authentic 26-herb Ayurvedic formulation infused with Kashmiri Saffron for radiant, even-toned skin.',
-        benefits: ['Restores Natural Radiance', 'Reduces Hyperpigmentation', 'Deeply Hydrates'],
-        ingredients: ['Saffron (Kumkuma)', 'Sandalwood (Chandana)', 'Manjistha', 'Sesame Oil Base'],
-        howToUse: 'Apply 3-4 drops on cleansed face and massage gently in upward circular motions.',
-        mrp: 1699,
-        sellingPrice: 1299,
-        category: categories[3]._id,
-        stockQuantity: 25,
-        thumbnail: '/images/kumkumadi-oil.jpg',
-        images: [
-          { url: '/images/kumkumadi-oil.jpg', alt: 'Kumkumadi Radiance Facial Glow Oil Dropper Bottle', sortOrder: 0, width: 800, height: 800 },
-          { url: '/images/kumkumadi-oil-2.jpg', alt: 'Pure Kashmiri Saffron & Herbal Extracts - Botanical Macro Angle', sortOrder: 1, width: 800, height: 800 }
-        ],
-        isFeatured: true,
-        averageRating: 4.9,
-        reviewCount: 42,
+        reviewCount: 22,
       },
     ]);
 
     await Banner.insertMany([
       {
-        title: 'Nature, thoughtfully chosen.',
-        subtitle: 'Daily rituals for balance, calm and natural care.',
-        imageUrl: '/images/hero-slide-1.jpg',
+        title: 'Artisanal Cakes Crafted for Your Special Moments',
+        subtitle: 'Freshly baked with pure Belgian chocolate, dairy butter, and love.',
+        imageUrl: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1600',
         linkUrl: '/shop',
         position: 1,
-        isActive: true,
-      },
-      {
-        title: 'Ayurvedic Wellness for Everyday Health',
-        subtitle: 'Thoughtfully crafted herbal supplements, roots & pure elixirs.',
-        imageUrl: '/images/hero-slide-2.jpg',
-        linkUrl: '/category/ayurvedic-supplements',
-        position: 2,
-        isActive: true,
-      },
-      {
-        title: 'Golden Elixirs & Soothing Teas',
-        subtitle: 'Chamomile, holy basil and calming herbal blends for restful days.',
-        imageUrl: '/images/hero-slide-3.jpg',
-        linkUrl: '/category/herbal-teas',
-        position: 3,
         isActive: true,
       },
     ]);
 
     await Coupon.insertMany([
       {
-        code: 'HERBAL10',
+        code: 'CAKE10',
         discountType: 'percentage',
         discountAmount: 10,
         minPurchaseAmount: 499,
-        expiryDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+        expiryDate: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000),
         isActive: true,
       },
     ]);
 
-    console.log('✅ [AutoSeed] Initial database seed completed successfully!');
-  } catch (error) {
-    console.error('[AutoSeed Error]', error.message);
+    console.log('[AutoSeed] The Cake Era bakery data successfully seeded.');
+  } catch (err) {
+    console.error('[AutoSeed] Error during seeding:', err);
   }
 };
 

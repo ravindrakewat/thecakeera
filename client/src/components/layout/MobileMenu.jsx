@@ -50,8 +50,11 @@ const MobileMenu = ({ isOpen, onClose }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
-          <span style={{ fontSize: '1.2rem', fontWeight: 700, color: '#1b4332' }}>{siteConfig.brandName}</span>
-          <button onClick={onClose} aria-label="Close menu" style={{ background: 'none', border: 'none', padding: '0.4rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+            <img src="/logo.png" alt="The Cake Era" style={{ width: '38px', height: '38px', borderRadius: '50%', objectFit: 'cover', border: '1px solid #d4af37' }} />
+            <span style={{ fontSize: '1.2rem', fontWeight: 700, color: '#1b4332' }}>{siteConfig.brandName}</span>
+          </div>
+          <button onClick={onClose} aria-label="Close menu" style={{ background: 'none', border: 'none', padding: '0.4rem', cursor: 'pointer' }}>
             <X size={24} color="#1b4332" />
           </button>
         </div>

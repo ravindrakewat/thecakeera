@@ -66,7 +66,7 @@ const SearchResults = () => {
           <Search size={24} color="#2d6a4f" /> Search Results for "{query}"
         </h1>
         <p style={{ color: '#5c6e63', fontSize: '0.95rem', marginTop: '0.3rem' }}>
-          Found {pagination.total} matching herbal products for your search query.
+          Found {pagination.total} matching bakery items for your search query.
         </p>
       </div>
 

@@ -42,7 +42,7 @@ const OrderSuccess = () => {
         <CheckCircle size={64} color="#52b788" style={{ marginBottom: '1rem' }} />
         <h1 style={{ fontSize: '2rem', color: '#1b4332', marginBottom: '0.5rem' }}>Order Confirmed!</h1>
         <p style={{ color: '#5c6e63', fontSize: '1.05rem', marginBottom: '1.5rem' }}>
-          Thank you for choosing Herbal E-Commerce. Your order has been placed successfully.
+          Thank you for choosing The Cake Era. Your celebration order has been placed successfully and is being freshly prepared!
         </p>
 
         <div style={{ backgroundColor: '#f4f9f6', padding: '1.25rem', borderRadius: '12px', display: 'inline-block', marginBottom: '2rem' }}>

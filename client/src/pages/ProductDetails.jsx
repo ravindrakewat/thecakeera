@@ -669,11 +669,11 @@ const ProductDetails = () => {
                     letterSpacing: '0.6px',
                   }}
                 >
-                  AyuVeda Herbal
+                  {product.brand || siteConfig.brandName}
                 </span>
                 <span style={{ color: '#d0c8bd' }}>•</span>
                 <span style={{ fontSize: '0.84rem', color: '#647369', fontWeight: 600 }}>
-                  {product.category?.name || 'Ayurvedic Wellness'}
+                  {product.category?.name || 'Bakery & Cakes'}
                 </span>
               </div>
 
@@ -1795,7 +1795,7 @@ const ProductDetails = () => {
               width: '400px',
               height: '400px',
               borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(82, 183, 136, 0.18) 0%, transparent 70%)',
+              background: 'radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%)',
               pointerEvents: 'none',
             }}
           />
@@ -1803,8 +1803,8 @@ const ProductDetails = () => {
           <div style={{ maxWidth: '780px', marginBottom: '2.5rem', position: 'relative', zIndex: 1 }}>
             <span
               style={{
-                color: '#74c69d',
-                fontSize: '0.82rem',
+                color: '#d4af37',
+                fontSize: '0.85rem',
                 fontWeight: 700,
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
@@ -1812,7 +1812,7 @@ const ProductDetails = () => {
                 marginBottom: '0.5rem',
               }}
             >
-              The AyuVeda Botanical Promise
+              The Cake Era Bakery Promise
             </span>
             <h2
               style={{
@@ -1824,10 +1824,10 @@ const ProductDetails = () => {
                 margin: '0 0 0.85rem 0',
               }}
             >
-              Ancient Himalayan Roots, Tested for Modern Purity
+              Freshly Baked with Passion, Pure Butter &amp; Belgian Cocoa
             </h2>
             <p style={{ color: '#d8e6dc', fontSize: '1rem', lineHeight: 1.65, margin: 0 }}>
-              Every batch undergoes strict safety tests for heavy metals, microbial safety, and active bio-compounds before reaching your home.
+              Every cake and artisanal bake is handcrafted fresh on order under strict hygiene standards and packed with utmost love.
             </p>
           </div>
 
@@ -1841,21 +1841,21 @@ const ProductDetails = () => {
             }}
           >
             <div style={{ backgroundColor: 'rgba(255,255,255,0.06)', borderRadius: '16px', padding: '1.25rem', border: '1px solid rgba(255,255,255,0.1)' }}>
-              <Leaf size={24} color="#74c69d" style={{ marginBottom: '0.5rem' }} />
-              <strong style={{ fontSize: '0.98rem', display: 'block', marginBottom: '0.25rem' }}>Ethically Cultivated</strong>
-              <span style={{ fontSize: '0.84rem', color: '#c5d8cc', lineHeight: 1.5 }}>Directly sourced from indigenous farmers across pristine Indian valleys.</span>
+              <Sparkles size={24} color="#d4af37" style={{ marginBottom: '0.5rem' }} />
+              <strong style={{ fontSize: '0.98rem', display: 'block', marginBottom: '0.25rem' }}>Freshly Baked On Order</strong>
+              <span style={{ fontSize: '0.84rem', color: '#c5d8cc', lineHeight: 1.5 }}>Never pre-stored or frozen; baked fresh in our ovens right before your celebration.</span>
             </div>
 
             <div style={{ backgroundColor: 'rgba(255,255,255,0.06)', borderRadius: '16px', padding: '1.25rem', border: '1px solid rgba(255,255,255,0.1)' }}>
-              <ShieldCheck size={24} color="#74c69d" style={{ marginBottom: '0.5rem' }} />
-              <strong style={{ fontSize: '0.98rem', display: 'block', marginBottom: '0.25rem' }}>Heavy Metal Tested</strong>
-              <span style={{ fontSize: '0.84rem', color: '#c5d8cc', lineHeight: 1.5 }}>Guaranteed free from harmful contaminants, synthetic colors &amp; chemicals.</span>
+              <ShieldCheck size={24} color="#d4af37" style={{ marginBottom: '0.5rem' }} />
+              <strong style={{ fontSize: '0.98rem', display: 'block', marginBottom: '0.25rem' }}>100% Pure Ingredients</strong>
+              <span style={{ fontSize: '0.84rem', color: '#c5d8cc', lineHeight: 1.5 }}>Made with 54% real Belgian chocolate, pure dairy butter, and natural flavours.</span>
             </div>
 
             <div style={{ backgroundColor: 'rgba(255,255,255,0.06)', borderRadius: '16px', padding: '1.25rem', border: '1px solid rgba(255,255,255,0.1)' }}>
-              <Award size={24} color="#74c69d" style={{ marginBottom: '0.5rem' }} />
-              <strong style={{ fontSize: '0.98rem', display: 'block', marginBottom: '0.25rem' }}>GMP Certified Facility</strong>
-              <span style={{ fontSize: '0.84rem', color: '#c5d8cc', lineHeight: 1.5 }}>Manufactured in an inspected facility adhering to global hygiene standards.</span>
+              <Truck size={24} color="#d4af37" style={{ marginBottom: '0.5rem' }} />
+              <strong style={{ fontSize: '0.98rem', display: 'block', marginBottom: '0.25rem' }}>Express Temperature Care</strong>
+              <span style={{ fontSize: '0.84rem', color: '#c5d8cc', lineHeight: 1.5 }}>Carefully delivered in insulated packaging with free knife, candles &amp; tag.</span>
             </div>
           </div>
         </div>
@@ -1867,7 +1867,7 @@ const ProductDetails = () => {
               products={relatedProducts}
               loading={relatedLoading}
               title="You May Also Like"
-              subtitle={`More handpicked remedies from ${product.category?.name || 'our herbal apothecary'}`}
+              subtitle={`More freshly baked treats from ${product.category?.name || 'our bakery oven'}`}
               viewAllLink="/shop"
             />
           </div>

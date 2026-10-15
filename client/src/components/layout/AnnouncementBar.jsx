@@ -3,12 +3,12 @@ import { Leaf, Truck, ShieldCheck, Sparkles, Clock, HeartHandshake } from 'lucid
 
 const AnnouncementBar = () => {
   const announcements = [
-    { icon: <Leaf size={14} color="#74c69d" />, text: 'Pure • Plant-Based • Thoughtfully Made' },
-    { icon: <Truck size={14} color="#74c69d" />, text: 'Free Shipping across India on orders above ₹499' },
-    { icon: <Sparkles size={14} color="#f9c74f" />, text: '100% Natural & Certified Ayurvedic Ingredients' },
-    { icon: <ShieldCheck size={14} color="#74c69d" />, text: 'FSSAI Approved & Lab Tested For Purity' },
-    { icon: <Clock size={14} color="#90e0ef" />, text: 'Same Day Dispatch on Prepaid Orders' },
-    { icon: <HeartHandshake size={14} color="#74c69d" />, text: 'Cash on Delivery Available Across India' },
+    { icon: <Sparkles size={14} color="#f9c74f" />, text: 'Freshly Baked Daily • 100% Hygienic & Pure' },
+    { icon: <Truck size={14} color="#74c69d" />, text: 'Free Delivery on orders above ₹499' },
+    { icon: <Sparkles size={14} color="#f9c74f" />, text: 'Custom Designer & Celebration Cakes Available' },
+    { icon: <ShieldCheck size={14} color="#74c69d" />, text: '100% Eggless Options Available Across All Flavours' },
+    { icon: <Clock size={14} color="#90e0ef" />, text: 'Express Same-Day Delivery for Special Moments' },
+    { icon: <HeartHandshake size={14} color="#74c69d" />, text: 'Cash on Delivery & Secure Online Payments' },
   ];
 
   // Duplicate items for a seamless, gap-free infinite loop

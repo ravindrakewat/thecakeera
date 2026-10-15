@@ -95,6 +95,7 @@ const Header = () => {
             <img
               src="/logo.png"
               alt="The Cake Era"
+              className="header-brand-logo"
               style={{
                 width: '46px',
                 height: '46px',
@@ -102,11 +103,13 @@ const Header = () => {
                 objectFit: 'cover',
                 boxShadow: '0 2px 10px rgba(7, 40, 24, 0.25)',
                 border: '1.5px solid #d4af37',
+                flexShrink: 0,
               }}
             />
 
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span
+                className="header-brand-title"
                 style={{
                   fontSize: '1.45rem',
                   fontWeight: 700,
@@ -114,11 +117,13 @@ const Header = () => {
                   color: '#153222',
                   letterSpacing: '-0.3px',
                   lineHeight: 1.1,
+                  whiteSpace: 'nowrap',
                 }}
               >
                 {siteConfig.brandName}
               </span>
               <span
+                className="desktop-only"
                 style={{
                   fontSize: '0.62rem',
                   fontWeight: 600,
@@ -126,6 +131,7 @@ const Header = () => {
                   color: '#997328',
                   textTransform: 'uppercase',
                   marginTop: '2px',
+                  whiteSpace: 'nowrap',
                 }}
               >
                 A New Era Of Celebration
@@ -180,6 +186,7 @@ const Header = () => {
 
         {/* Navigation Links & Action Controls */}
         <nav
+          className="header-nav-actions"
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -416,7 +423,7 @@ const Header = () => {
               }}
             >
               <User size={19} strokeWidth={1.8} color="#153222" />
-              <span>Login</span>
+              <span className="desktop-only">Login</span>
             </Link>
           )}
         </nav>

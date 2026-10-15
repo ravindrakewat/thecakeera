@@ -190,7 +190,7 @@ const HeroCarousel = () => {
 
               {/* Text Content Area */}
               <div
-                className="container-fluid"
+                className="container-fluid hero-slide-content"
                 style={{
                   position: 'relative',
                   zIndex: 2,
@@ -219,6 +219,7 @@ const HeroCarousel = () => {
 
                   {/* Headline */}
                   <h1
+                    className="hero-headline"
                     style={{
                       fontSize: 'clamp(2rem, 4.2vw, 3.4rem)',
                       color: '#153222',
@@ -235,6 +236,7 @@ const HeroCarousel = () => {
 
                   {/* Subtitle */}
                   <p
+                    className="hero-subtitle"
                     style={{
                       fontSize: 'clamp(0.95rem, 1.4vw, 1.12rem)',
                       color: '#2d4335',
@@ -249,6 +251,7 @@ const HeroCarousel = () => {
 
                   {/* Badges Row */}
                   <div
+                    className="hero-badges-row"
                     style={{
                       display: 'flex',
                       flexWrap: 'wrap',
@@ -294,6 +297,7 @@ const HeroCarousel = () => {
                   <div>
                     <Link
                       to={slide.ctaLink}
+                      className="hero-cta-btn"
                       style={{
                         display: 'inline-flex',
                         alignItems: 'center',
@@ -352,6 +356,7 @@ const HeroCarousel = () => {
       <button
         onClick={handlePrev}
         aria-label="Previous slide"
+        className="hero-carousel-nav-btn desktop-only"
         style={{
           position: 'absolute',
           left: 'clamp(0.75rem, 2vw, 1.75rem)',
@@ -387,6 +392,7 @@ const HeroCarousel = () => {
       <button
         onClick={handleNext}
         aria-label="Next slide"
+        className="hero-carousel-nav-btn desktop-only"
         style={{
           position: 'absolute',
           right: 'clamp(0.75rem, 2vw, 1.75rem)',

@@ -7,7 +7,7 @@ export const getApiBaseUrl = () => {
   }
   // Production fallback: automatically connect to live Render API
   if (import.meta.env.PROD) {
-    return 'https://api.anchara.com/api';
+    return import.meta.env.VITE_API_URL || 'https://thecakeera.onrender.com/api';
   }
   // Local development fallback
   return 'http://localhost:5000/api';

@@ -49,10 +49,9 @@ const buildAllowedOrigins = () => {
     process.env.CLIENT_URL || 'http://localhost:5173',
     'http://localhost:5173',
     'http://127.0.0.1:5173',
-    'https://anchara.com',
-    'https://www.anchara.com',
-    'http://anchara.com',
-    'http://www.anchara.com',
+    'https://thecakeera.com',
+    'https://www.thecakeera.com',
+    'https://thecakeera.vercel.app',
   ];
   // Support comma-separated additional origins: EXTRA_CLIENT_URLS=https://a.com,https://b.com
   const extras = process.env.EXTRA_CLIENT_URLS
@@ -67,7 +66,8 @@ app.use(
       // Allow requests with no origin (e.g., curl, Postman, same-server, uptime monitors)
       if (!origin) return callback(null, true);
       const allowedOrigins = buildAllowedOrigins();
-      if (allowedOrigins.includes(origin)) {
+      // Allow listed origins or any Vercel deployment (*.vercel.app)
+      if (allowedOrigins.includes(origin) || origin.endsWith('.vercel.app')) {
         return callback(null, true);
       }
       callback(new Error(`CORS: Origin '${origin}' is not allowed.`));
@@ -82,7 +82,7 @@ app.buildAllowedOrigins = buildAllowedOrigins;
 app.get('/', (req, res) => {
   res.status(200).json({
     success: true,
-    message: 'Herbal E-Commerce API is running',
+    message: 'The Cake Era Bakery API is running',
     status: 'healthy',
   });
 });

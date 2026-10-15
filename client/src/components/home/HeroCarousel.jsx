@@ -21,7 +21,7 @@ const DEFAULT_SLIDES = [
   },
   {
     id: 'designer-cakes',
-    image: 'https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=1600',
+    image: 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?q=80&w=1600',
     eyebrow: 'Custom Celebrations • Handcrafted Perfection',
     title: 'Designer Cakes That Make Every Birthday Magical.',
     subtitle: 'Tiered & thematic cakes customized with love, fresh berries, and silky creams.',

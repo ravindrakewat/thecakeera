@@ -171,9 +171,9 @@ const seedCakeEra = async () => {
         sellingPrice: 1599,
         category: catMap['designer-cakes'],
         stockQuantity: 15,
-        thumbnail: 'https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=800',
+        thumbnail: 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?q=80&w=800',
         images: [
-          { url: 'https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=800', alt: 'Royal Golden Floral Tiered Cake', sortOrder: 0, width: 800, height: 800 }
+          { url: 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?q=80&w=800', alt: 'Royal Golden Floral Tiered Cake', sortOrder: 0, width: 800, height: 800 }
         ],
         isFeatured: true,
         averageRating: 5.0,

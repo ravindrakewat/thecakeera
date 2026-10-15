@@ -1,7 +1,7 @@
 export const PRODUCT_IMAGE_MAP = {
   'belgian-dark-truffle-celebration-cake': 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800',
   'classic-red-velvet-cream-cheese-cake': 'https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?q=80&w=800',
-  'royal-golden-floral-tiered-cake': 'https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=800',
+  'royal-golden-floral-tiered-cake': 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?q=80&w=800',
   'fresh-blueberry-cheesecake-slice': 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?q=80&w=800',
   'assorted-gourmet-cupcake-box-6pcs': 'https://images.unsplash.com/photo-1587314168485-3236d6710814?q=80&w=800',
   'chunky-roasted-almond-dark-choco-cookies': 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=800',

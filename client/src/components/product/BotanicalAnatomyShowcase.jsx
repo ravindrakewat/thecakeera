@@ -160,64 +160,56 @@ const BotanicalAnatomyShowcase = ({
   // ── DYNAMIC GENERATION FOR ANY OTHER NEW LISTED PRODUCT ──
   const getDynamicCards = () => {
     // If the product has custom botanical anatomy in database
-    if (product?.botanicalAnatomy && Array.isArray(product.botanicalAnatomy)) {
+    if (product?.botanicalAnatomy && Array.isArray(product.botanicalAnatomy) && product.botanicalAnatomy.length >= 6) {
       const left = product.botanicalAnatomy.slice(0, 3);
       const right = product.botanicalAnatomy.slice(3, 6);
       return { left, right };
     }
 
-    // If it's Sea Buckthorn, return the exact verified anatomy
-    if (isSeaBuckthorn) {
-      return { left: seaBuckthornLeft, right: seaBuckthornRight };
-    }
-
-    // Otherwise, dynamically construct from the new product's ingredients & benefits:
     const ingredients = product?.ingredients || [];
     const benefits = product?.benefits || [];
 
     const dynamicLeft = [
       {
-        id: 'active-botanical',
-        title: ingredients[0] ? ingredients[0].toUpperCase() : 'PURE ACTIVE EXTRACT',
+        id: 'pure-ingredients',
+        title: ingredients[0] ? ingredients[0].toUpperCase() : 'BELGIAN COCOA & PURE BUTTER',
         bullets: [
-          'Ethically harvested wild medicinal plant parts',
-          'Standardized for optimal bio-availability',
-          'Rich in authentic secondary metabolites',
+          ingredients[0] ? `Made with ${ingredients[0]}` : 'Pure couverture chocolate & cream butter',
+          'Rich melt-in-mouth texture with authentic notes',
+          'Zero artificial preservatives or palm oil',
         ],
         icon: (
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2d6a4f" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
-            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d4af37" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z" fill="#fef3c7" />
           </svg>
         ),
       },
       {
-        id: 'therapeutic-synergy',
-        title: ingredients[1] ? ingredients[1].toUpperCase() : 'HERBAL SYNERGY',
+        id: 'moist-sponge',
+        title: ingredients[1] ? ingredients[1].toUpperCase() : 'SLOW-WHISKED SPONGE',
         bullets: [
-          'Formulated according to classical Ayurvedic principles',
-          'Enhances digestive assimilation & absorption',
-          'Zero artificial additives or chemical solvents',
+          ingredients[1] ? `Infused with ${ingredients[1]}` : 'Slow-churned sponge for tender texture',
+          'Generously layered with silky smooth frosting',
+          'Carefully balanced sweetness for every palate',
         ],
         icon: (
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <path d="M12 2.5C12 2.5 6 10 6 15C6 18.3 8.7 21 12 21C15.3 21 18 18.3 18 15C18 10 12 2.5 12 2.5Z" fill="#F59E0B" fillOpacity="0.25" stroke="#DD5226" strokeWidth="1.8" />
+            <circle cx="12" cy="12" r="8" fill="#f59e0b" fillOpacity="0.25" stroke="#b45309" strokeWidth="1.8" />
+            <circle cx="12" cy="12" r="3" fill="#d4af37" />
           </svg>
         ),
       },
       {
-        id: 'natural-matrix',
-        title: ingredients[2] ? ingredients[2].toUpperCase() : 'PLANT MATRIX',
+        id: 'artisanal-craft',
+        title: ingredients[2] ? ingredients[2].toUpperCase() : 'FRESH ARTISANAL INGREDIENTS',
         bullets: [
-          'Preserves full-spectrum natural phytochemicals',
-          'Supports sustained daily vitality & energy',
-          '100% vegan, cruelty-free and natural origin',
+          ingredients[2] ? `Quality tested ${ingredients[2]}` : 'Handcrafted in small batches on order',
+          'Finest natural extracts & farm-fresh produce',
+          '100% vegetarian & eggless options available',
         ],
         icon: (
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-            <path d="M3 17C6 17 8 15 11 15C14 15 17 19 21 19" stroke="#92400E" strokeWidth="1.8" strokeLinecap="round" />
-            <circle cx="7" cy="11" r="1.5" fill="#D97706" />
-            <circle cx="11" cy="9" r="1.8" fill="#F59E0B" />
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2d6a4f" strokeWidth="1.8">
+            <path d="M12 2.5C12 2.5 6 10 6 15C6 18.3 8.7 21 12 21C15.3 21 18 18.3 18 15C18 10 12 2.5 12 2.5Z" fill="#d8f3dc" />
           </svg>
         ),
       },
@@ -225,12 +217,12 @@ const BotanicalAnatomyShowcase = ({
 
     const dynamicRight = [
       {
-        id: 'primary-action',
-        title: benefits[0] ? 'PRIMARY BENEFIT' : 'DAILY NOURISHMENT',
+        id: 'baked-fresh',
+        title: benefits[0] ? 'FRESHLY BAKED ON ORDER' : 'OVEN FRESH PERFECTION',
         bullets: [
-          benefits[0] || 'Supports internal wellness & natural balance',
-          'Scientifically verified traditional healing benefits',
-          'Gentle and effective for daily routine',
+          benefits[0] || 'Never stored or frozen; baked fresh for your occasion',
+          'Retains maximum aroma, fluffiness and moistness',
+          'Dispatched straight from our bakery kitchen',
         ],
         icon: (
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
@@ -239,12 +231,12 @@ const BotanicalAnatomyShowcase = ({
         ),
       },
       {
-        id: 'rejuvenation',
-        title: benefits[1] ? 'RESTORE & REJUVENATE' : 'RASAYANA POWER',
+        id: 'celebration-ready',
+        title: benefits[1] ? 'CELEBRATION READY' : 'HANDCRAFTED ARTISANAL LOOK',
         bullets: [
-          benefits[1] || 'Promotes deep tissue rejuvenation (Rasayana)',
-          'Fortifies constitutional strength & immunity',
-          'Promotes metabolic calm and equilibrium',
+          benefits[1] || 'Includes free candles, cutting knife & greeting card',
+          'Artisanal hand-piped swirls and elegant presentation',
+          'Centerpiece designed to wow all your guests',
         ],
         icon: (
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
@@ -254,12 +246,12 @@ const BotanicalAnatomyShowcase = ({
         ),
       },
       {
-        id: 'longevity',
-        title: benefits[2] ? 'HOLISTIC VITALITY' : 'AYURVEDIC HARMONY',
+        id: 'safe-delivery',
+        title: benefits[2] ? 'TEMPERATURE-CONTROLLED' : 'SAFE EXPRESS DELIVERY',
         bullets: [
-          benefits[2] || 'Calms aggravated Doshas for sustained health',
-          'Nourishes body and mind from within',
-          'Certified pure by rigorous quality protocols',
+          benefits[2] || 'Delivered in insulated shock-proof packaging',
+          'Zero-tilt handling by trained delivery executives',
+          'Guaranteed on-time arrival for cake cutting',
         ],
         icon: (
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none">

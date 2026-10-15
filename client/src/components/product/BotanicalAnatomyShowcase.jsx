@@ -22,31 +22,18 @@ const BotanicalAnatomyShowcase = ({
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
   const [activeItem, setActiveItem] = useState(null);
 
-  // Determine if this is Sea Buckthorn or another herbal product
-  const isSeaBuckthorn =
-    product?.slug?.includes('buckthorn') ||
-    product?.name?.toLowerCase().includes('sea buckthorn') ||
-    !product;
-
   const productName =
-    customName ||
-    (isSeaBuckthorn
-      ? 'SEA BUCKTHORN'
-      : product?.name?.toUpperCase() || 'HERBAL REMEDY');
+    customName || product?.name?.toUpperCase() || 'BELGIAN CHOCOLATE CELEBRATION CAKE';
 
   const subtitle =
-    customSubtitle ||
-    (isSeaBuckthorn
-      ? 'ROOT TO FRUIT NOURISHMENT WITH'
-      : 'ACTIVE BOTANICAL ESSENCE & NOURISHMENT');
+    customSubtitle || 'HANDCRAFTED PERFECTION & ARTISANAL LAYERS';
 
   const imageSrc =
     customImage ||
-    (isSeaBuckthorn
-      ? '/images/sea-buckthorn-branch.jpg'
-      : getProductImage(product?.images?.[0]) ||
-        product?.thumbnail ||
-        '/images/sea-buckthorn-branch.jpg');
+    product?.thumbnail ||
+    product?.images?.[0]?.url ||
+    getProductImage(product) ||
+    'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=800';
 
   // Smooth mouse move parallax handler
   const handleMouseMove = (e) => {

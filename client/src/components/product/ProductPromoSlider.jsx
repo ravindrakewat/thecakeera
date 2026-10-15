@@ -32,20 +32,9 @@ const ProductPromoSlider = ({
       return product.promoSliderImages;
     }
 
-    if (
-      product?.slug?.includes('buckthorn') ||
-      product?.name?.toLowerCase().includes('sea buckthorn') ||
-      !product
-    ) {
-      return [
-        '/images/sea-buckthorn-banner-1.jpg',
-        '/images/sea-buckthorn-banner-2.jpg',
-      ];
-    }
-
     return [
-      '/images/sea-buckthorn-banner-1.jpg',
-      '/images/sea-buckthorn-banner-2.jpg',
+      'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1600',
+      'https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=1600',
     ];
   };
 

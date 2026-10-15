@@ -26,7 +26,7 @@ const connectDB = async () => {
 
   try {
     console.log('[Database] Connecting to MongoDB...');
-    const dbName = process.env.MONGO_DB_NAME || 'herbal_ecommerce';
+    const dbName = process.env.MONGO_DB_NAME || 'thecakeera_db';
     const conn = await mongoose.connect(uri, {
       dbName,
       serverSelectionTimeoutMS: 5000,
